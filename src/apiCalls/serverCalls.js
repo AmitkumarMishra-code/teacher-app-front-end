@@ -30,7 +30,20 @@ export async function getAffiliateData() {
         if (response.status !== 200) {
             throw new Error(data.message)
         } else {
-            console.log(data.message)
+            return data.message
+        }
+    } catch (error) {
+        throw error
+    }
+}
+
+export async function registerClick(id) {
+    try {
+        let response = await fetch(URL + '/' + id)
+        let data = await response.json()
+        if (response.status !== 200) {
+            throw new Error(data.message)
+        } else {
             return data.message
         }
     } catch (error) {
