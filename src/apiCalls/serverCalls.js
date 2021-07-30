@@ -1,4 +1,4 @@
-const URL = 'http://localhost:4000'
+const URL = `https://email-marketing-app.herokuapp.com`
 export async function registerUser(username, name) {
     console.log(username, name)
     try {
