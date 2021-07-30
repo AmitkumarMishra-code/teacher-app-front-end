@@ -31,6 +31,7 @@ export function AffiliateLink(props){
         try {
             await registerClick(props.match.params.id)
             setIsLoading(false)
+            window.location.replace('https://www.google.com')
         }
         catch (error) {
             setErrorMessage(error.message)
