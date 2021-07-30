@@ -43,9 +43,9 @@ export function AffiliateLink(props){
         // eslint-disable-next-line
     },[])
     return(
-        <Box>
+        <Box d= 'flex' justifyContent = 'center' alignItems='center' minH = '100vh'>
             {
-                isLoading && !errorMessage ?  <Text>Redirecting....</Text> : <Text>{errorMessage}</Text>
+                isLoading && !errorMessage ?  <Text fontSize = '4xl' fontWeight = 'semibold'>Redirecting....</Text> : <Text>{errorMessage}</Text>
             }
         </Box>
     )
