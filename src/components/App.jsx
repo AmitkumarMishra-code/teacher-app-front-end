@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { registerClick } from "../apiCalls/serverCalls"
 import Admin from "./Admin"
 import Home from "./Home"
 import SignUp from "./Signup"
@@ -28,7 +29,7 @@ export function AffiliateLink(props){
     const [errorMessage, setErrorMessage] = useState(null)
     const redirectUser = async() => {
         try {
-            let response = await registerClick(props.params.match.id)
+            await registerClick(props.params.match.id)
             setIsLoading(false)
         }
         catch (error) {
