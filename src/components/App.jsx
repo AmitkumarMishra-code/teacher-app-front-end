@@ -29,7 +29,7 @@ export function AffiliateLink(props){
     const [errorMessage, setErrorMessage] = useState(null)
     const redirectUser = async() => {
         try {
-            await registerClick(props.params.match.id)
+            await registerClick(props.match.params.id)
             setIsLoading(false)
         }
         catch (error) {
