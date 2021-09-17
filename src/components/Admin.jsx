@@ -44,7 +44,7 @@ export default function Admin() {
                 data.length > 0 && !isLoading && !errorMessage ?
                     <Box minW='40%' borderWidth="1px" borderRadius="lg" boxShadow='md' p = '2rem'>
                         <Table variant="striped" borderWidth="1px" borderRadius='lg'>
-                            <TableCaption>Detailed View of all Affiliates</TableCaption>
+                            <TableCaption>Detailed View of all Teachers</TableCaption>
                             <Thead>
                                 <Tr>
                                     <Th>Teacher Name</Th>
