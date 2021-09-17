@@ -7,6 +7,7 @@ import { Link as homeLink } from 'react-router-dom'
 export default function SignUp() {
     const nameRef = useRef()
     const usernameRef = useRef()
+    const subjectRef = useRef()
     const [buttonLoading, setButtonLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
@@ -15,11 +16,19 @@ export default function SignUp() {
     const submitHandler = async () => {
         setButtonLoading(true)
         if (!usernameRef.current.value.trim().length) {
-            alert('Username field cannot be empty!')
+            alert('Teacher ID field cannot be empty!')
+            return
+        }
+        if (!nameRef.current.value.trim().length) {
+            alert('Teacher Name field cannot be empty!')
+            return
+        }
+        if (!subjectRef.current.value.trim().length) {
+            alert('Subject field cannot be empty!')
             return
         }
         try {
-            let response = await registerUser(usernameRef.current.value.trim(), nameRef.current.value.trim())
+            let response = await registerUser(usernameRef.current.value.trim(), nameRef.current.value.trim(), subjectRef.current.value.trim())
             setButtonLoading(false)
             setSuccess(true)
             setLink(response)
@@ -49,11 +58,20 @@ export default function SignUp() {
                             <Input
                                 id='username'
                                 variant='outline'
-                                placeholder="Username"
+                                placeholder="Unique Teacher Id"
                                 isRequired
                                 type='text'
                                 mb='1rem'
                                 ref={usernameRef}
+                            />
+                            <Input
+                                id='subject'
+                                variant='outline'
+                                placeholder="Enter Subject Name"
+                                isRequired
+                                type='text'
+                                mb='1rem'
+                                ref={subjectRef}
                             />
                         </FormControl>
                         <Button
@@ -70,6 +88,7 @@ export default function SignUp() {
                 </Box>
                 :
                 <Box d='flex' flexDir='column' justifyContent = 'center' alignItems='center'>
+                    <Text fontSize = 'xl' mb = '1rem' textDecoration = 'underline'></Text>
                 <Text fontSize = '3xl' mb = '1rem'>{window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/' + link}</Text>
                 <Link as={homeLink} to='/' style = {{textDecoration:'none'}}><Button colorScheme = 'whatsapp'>Home</Button></Link>
                 </Box>

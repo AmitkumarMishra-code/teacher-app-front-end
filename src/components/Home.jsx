@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <Box d = 'flex' flexDir='column' justifyContent = 'center' alignItems='center' minH = '100vh'>
             <Text fontSize="4xl" fontWeight = 'semibold' mb = '1rem'>
-                Welcome to Email Marketing Company!
+                Teacher Registration
             </Text>
             <Box d= 'flex' justifyContent='center' alignItems = 'center' >
                 <Link as={newUserLink} to='/newUser' style = {{textDecoration:'none'}}><Button colorScheme = 'whatsapp' mr = '2rem'>Sign Up!</Button></Link>

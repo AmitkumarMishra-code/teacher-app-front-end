@@ -47,18 +47,20 @@ export default function Admin() {
                             <TableCaption>Detailed View of all Affiliates</TableCaption>
                             <Thead>
                                 <Tr>
-                                    <Th>Owner</Th>
-                                    <Th>Link</Th>
-                                    <Th isNumeric >Total Clicks</Th>
+                                    <Th>Teacher Name</Th>
+                                    <Th>Teacher ID</Th>
+                                    <Th>Class Link</Th>
+                                    <Th>Subject</Th>
                                 </Tr>
                             </Thead>
                             <Tbody>
                                 {
                                     data.length > 0 && data.map((user, idx) =>
                                         <Tr key={idx}>
+                                            <Td>{user.name}</Td>
                                             <Td>{user.username}</Td>
                                             <Td><Link to={currentURL.substring(0, currentURL.lastIndexOf('/')) + '/' + user.link}>{currentURL.substring(0, currentURL.lastIndexOf('/')) + '/' + user.link}</Link></Td>
-                                            <Td textAlign='center'> {user.clicks}</Td>
+                                            <Td textAlign='center'> {user.subject}</Td>
                                         </Tr>
                                     )
                                 }
