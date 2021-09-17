@@ -1,12 +1,13 @@
 const URL = `https://email-marketing-app.herokuapp.com`
-export async function registerUser(username, name) {
+export async function registerUser(username, name, subject) {
     console.log(username, name)
     try {
         let response = await fetch(URL + '/user', {
             method: 'POST',
             body: JSON.stringify({
                 username: username,
-                name: name
+                name: name,
+                subject: subject,
             }),
             headers: {
                 'content-type': 'application/json'
